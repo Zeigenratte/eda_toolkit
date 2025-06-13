@@ -1,4 +1,3 @@
-# eda_toolkit
 Streamlit-Based Exploratory Data Analysis of Cirrhosis Prediction Dataset
 ---
 This project provides an interactive, modular and extensible Streamlit-based EDA 
