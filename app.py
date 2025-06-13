@@ -131,7 +131,7 @@ elif menu == "🧬 Data Structure Overview":
     st.header("Overview of Data Structure")
     st.markdown("""
     This section provides an overview of the structure and contents of the 
-    **Cirrhosis Prediction Dataset**, including variable types, formats, and 
+    **Cirrhosis Prediction Dataset**, including variable types, formats and 
     how the data is structured for analysis.
     """)
 
@@ -154,7 +154,7 @@ elif menu == "🧬 Data Structure Overview":
         - The **first 312 rows** represent patients who participated in a 
           **randomized clinical trial**. These entries contain comprehensive 
           information across all variables, including drug treatment, liver 
-          function indicators, and laboratory results.
+          function indicators and laboratory results.
 
         - The **remaining 106 rows** correspond to patients who did **not** 
           participate in the **randomized clinical trial** but consented to data 
@@ -187,10 +187,10 @@ elif menu == "🧬 Data Structure Overview":
         st.markdown("""
         - Most variables are complete for the majority of patients, but there is 
           substantial missingness in several clinical and laboratory variables. 
-          Notably, the `Drug`, `Ascites`, `Hepatomegaly`, and `Spiders` columns 
+          Notably, the `Drug`, `Ascites`, `Hepatomegaly` and `Spiders` columns 
           have **106 missing values** each, corresponding to patients who did not 
           participate in the clinical trial. Laboratory variables such as 
-          `Cholesterol`, `Copper`, and `Triglycerides` also have a significant 
+          `Cholesterol`, `Copper` and `Triglycerides` also have a significant 
           proportion of missing entries in the randomized clinical trial. 
 
         - The overall missing data rate is **12.4%**, indicating that careful 
@@ -246,7 +246,7 @@ elif menu == "🧹 Data Cleaning and Resolving Inconsistencies":
         st.header("Inconsistencies")
         st.markdown("""
         Before further analysis, common types of inconsistencies in the dataset 
-        are addressed:
+        are addressed.
 
         - The dataset is checked for exact duplicate rows. No duplicates are 
           found, as expected from the duplicate summary.
@@ -279,7 +279,7 @@ elif menu == "⭕ Missing Values Exploration":
     cleaned and consistent dataset. Several variables, especially those
     related to clinical and laboratory measurements (`Ascites`,
     `Hepatomegaly`, `Spiders`, `Cholesterol`, `Copper`, `Alk_Phos`,
-    `SGOT`, `Tryglicerides`, `Platelets`, `Prothrombin`, and `Stage`) 
+    `SGOT`, `Tryglicerides`, `Platelets`, `Prothrombin` and `Stage`) 
     contain missing entries. The missingness is most pronounced among
     patients who did not participate in the clinical trial, as indicated
     by the "No Drug" label.
@@ -287,7 +287,7 @@ elif menu == "⭕ Missing Values Exploration":
     Notably, there are different types of missing data.
 
     - Missing Completely at Random (**MCAR**): Data is missing independently
-      of both observed and unobserved values—there is no systematic
+      of both observed and unobserved values, there is no systematic
       pattern. (Example: A doctor forgets to record gender for every sixth
       patient regardless of their characteristics.)
 
@@ -295,7 +295,7 @@ elif menu == "⭕ Missing Values Exploration":
       data, not on the missing values themselves. This allows for valid
       statistical modeling if the observed variables related to the
       missingness are included. (Example: Older patients are less likely 
-      to report a history pneumonia, so missingness in pneumonia depends 
+      to report a history of pneumonia, so missingness in pneumonia depends 
       on age.)
 
     - Missing Not at Random (**MNAR**): The probability of missingness
@@ -306,7 +306,7 @@ elif menu == "⭕ Missing Values Exploration":
                 
     [3]
 
-    General steps to handle missing values are as follows.
+    General steps to handle missing values are as following.
 
     1. Identify patterns and reasons for missing data.
 
@@ -362,7 +362,7 @@ elif menu == "⭕ Missing Values Exploration":
 
         st.markdown("""
         The randomized group has missing values in `Cholesterol`, `Copper`, 
-        `Tryglicerides`, and `Platelets`. These appear to be **MAR** or possibly 
+        `Tryglicerides` and `Platelets`. These appear to be **MAR** or possibly 
         **MCAR**, as the missingness occurs without a structural cause. This 
         makes standard imputation feasible. For the variables `Platelets`, 
         `Prothrombin` and `Stage` a few entries are missing from non-randomized 
@@ -379,19 +379,19 @@ elif menu == "⭕ Missing Values Exploration":
         After exploring the extent and nature of missingness, the next step is 
         choosing how to deal with it. The right method depends on how much 
         data is missing and why it's missing. Poor handling of missing values 
-        can skew statistical results, introduce bias, or reduce the accuracy.
+        can skew statistical results, introduce bias or reduce the accuracy.
 
         Most imputation strategies fall into three categories.
 
         - **Deletion Methods**, where incomplete rows or values are dropped.
         - **Single Value Imputations**, which replace missing values with 
-          simple estimates like the mean, median, or mode.
+          simple estimates like the mean, median or mode.
         - **Model-Based Imputation**, which uses other variables to predict 
           missing values.
 
         Each method has its own assumptions and trade-offs. The following 
         sections summarize some select key techniques, their appropriate 
-        use cases, and limitations.                     
+        use cases and limitations.                     
         [3]
 
         #### Deletion Methods
@@ -427,17 +427,17 @@ elif menu == "⭕ Missing Values Exploration":
         same dataset.
         - Use when: There are enough complete cases and meaningful groupings 
           to define similarity.
-        - Avoid when: Similar records are small, poorly matched, or similarity 
+        - Avoid when: Similar records are small, poorly matched or similarity 
           is unclear.
                     
         [3], [4]
 
         #### Model-Based Imputation
         1. **Multiple Imputation (MI)**: Generates multiple complete datasets 
-        by imputing missing values with variability, performs separate analyses, 
+        by imputing missing values with variability, performs separate analyses 
         and combines results to reflect uncertainty.
         - Use when: Missingness is MAR, applicable to both categorical and 
-          numerical data, and valid statistical inference is required.
+          numerical data and valid statistical inference is required.
         - Avoid when: Data is MNAR or when simplicity is prioritized over 
           statistical rigor.
 
@@ -463,7 +463,7 @@ elif menu == "👥 Outliers Exploration":
     and consistent dataset. Outliers refer to observations that 
     significantly deviate from the majority of the data and may arise 
     from a variety of sources. In the medical context, such deviations can 
-    result from equipment malfunction, human error, or legitimate but rare 
+    result from equipment malfunction, human error or legitimate but rare 
     patient-specific conditions.
 
     Outliers may reflect meaningful physiological extremes, such as elevated 
@@ -503,7 +503,7 @@ elif menu == "👥 Outliers Exploration":
         dp.plot_categorical_distributions()
         st.markdown("""
         For **categorical variables**, the bar plots reveal notable category 
-        imbalances and - as discussed before - the presence of missing values 
+        imbalances and, as discussed before, the presence of missing values 
         within several features of the dataset. A prominent example is the 
         `Sex` variable, where female patients are strongly overrepresented 
         in comparison to males. Such disproportions may reflect sampling bias 
@@ -516,7 +516,7 @@ elif menu == "👥 Outliers Exploration":
 
         To enhance interpretability, particularly in the medical context, 
         it is often more insightful to explore categorical variables in 
-        relation to a clinically relevant target variable — for instance, 
+        relation to a clinically relevant target variable, for instance, 
         mortality (`Status`), treatment group (`Drug`) or disease stage 
         (`Stage`).
         """)
@@ -528,7 +528,7 @@ elif menu == "👥 Outliers Exploration":
         The **numerical variables**, as shown in the histogram and boxplot 
         combinations, exhibit varied distributions and clearly visible 
         outliers. Features like `Bilirubin`, `Alk_Phos`, `Copper`, 
-        `Triglycerides`, and `SGOT` show heavily right-skewed distributions 
+        `Triglycerides` and `SGOT` show heavily right-skewed distributions 
         with long tails and extreme values far from the central mass. 
         Other features such as `Albumin` and `Platelets` are closer to 
         symmetric but still display potential outliers beyond the whiskers 
@@ -545,7 +545,7 @@ elif menu == "👥 Outliers Exploration":
         st.markdown("""
         After identifying the distribution and presence of outliers, the next 
         step is to determine how to handle them. Mishandling outliers can lead 
-        to distorted results, inflated variance, and biased inferences. 
+        to distorted results, inflated variance and biased inferences. 
 
         In the following we use unsupervised statistical methods, which 
         systematically flag observations that deviate from the central 
@@ -565,7 +565,7 @@ elif menu == "👥 Outliers Exploration":
         - Avoid when: Data is skewed or multivariate.
 
         2. **Z-Score**: Measures the standard deviation distance from the mean. 
-        Values with |Z| > 3 are, as a “rule of thumb,” flagged as outliers.
+        Values with |Z| > 3 are, as a “rule of thumb”, flagged as outliers.
         - Use when: Data is approximately normal and large in size.
         - Avoid when: Distributions are skewed or sample size is small.
 
@@ -594,11 +594,11 @@ elif menu == "🧪 Example 1":
 
     **Example 1**: 
     - The few rows with missing values 
-      (`Platelets`, `Prothrombin`, `Stage`) are removed within the the 
+      (`Platelets`, `Prothrombin`and `Stage`) are removed within the the 
       non-randomized participants (`Drug == "No Drug"`). Missing values 
       in the randomized trial subgroup (`Drug != "No Drug"`) for missing 
       clinical variables 
-      (`Cholesterol`, `Copper`, `Tryglicerides`, `Platelets`) are imputed 
+      (`Cholesterol`, `Copper`, `Tryglicerides` and `Platelets`) are imputed 
       using **multiple imputation** to preserve statistical relationships. 
     
     This approach emphasizes data integrity in the non-randomized subgroup 
@@ -728,7 +728,7 @@ elif menu == "🧪 Example 1":
         dp.plot_numeric_distributions(columns=column_units)
 
         st.markdown("""
-        Key observations by examining central tendency, spread, and outlier 
+        Key observations by examining central tendency, spread and outlier 
         presence from these distribution plots are as followed. 
 
         - **Preservation of Shape**: For most variables, the overall shape of 
@@ -746,8 +746,8 @@ elif menu == "🧪 Example 1":
           that such rows might represent more complex or severe cases, where 
           multiple variables deviate simultaneously.
 
-        - **Effects of Imputation**: Cleaned DF tends to smooth out some of 
-          the gaps present in the inital data. Subtle new peaks in 
+        - **Effects of Imputation**: Cleaned Listwise DF tends to smooth out some 
+          of the gaps present in the inital data. Subtle new peaks in 
           `Tryglicerides` and `Copper`, probably caused by mean/median 
           imputation or MI filling in with typical values, which slightly 
           boosts the frequency around central tendencies.
@@ -825,9 +825,9 @@ elif menu == "🔬 Example 2":
       justified.
     
     - For the second imputed DataFrame, the remaining missing variables 
-      across the earlier dataset (`imputed_df`)—after imputation in the 
+      across the earlier dataset (`imputed_df`), after imputation in the 
       randomized trial only the non-randomized participants contain missing 
-      values—are imputed using **mean or median** and **mode imputation**. 
+      values, are imputed using **mean or median** and **mode imputation**. 
       This approach balances **model-based imputation** for trial participants 
       with **statistical imputation** for the rest, yielding a complete 
       dataset (`imputed_df_2`) while preserving as much information as 
@@ -930,7 +930,7 @@ elif menu == "🔬 Example 2":
         dp.plot_categorical_distributions()
 
         st.markdown("""
-        In **Example 2**, we see how using mean, median, or mode imputation for 
+        In **Example 2**, we see how using mean, median or mode imputation for 
         the "No Drug" subgroup affects the overall shape of the data.
 
         Most variables in the partially imputed df (`outliers_df`) keep a 
@@ -940,7 +940,7 @@ elif menu == "🔬 Example 2":
         `Copper`, `SGOT`, and `Tryglicerides` show sharp, artificial spikes, 
         typical signs of many missing values being filled in with the same 
         average value. The same trend can be observed for categoric variables 
-        like `Ascites`, `Hepatomegaly`, or `Spiders`, where imputation with the 
+        like `Ascites`, `Hepatomegaly` or `Spiders`, where imputation with the 
         mode leads to inflated counts for the most common category.
 
         This kind of imputation ensures dataset completeness but oversimplifies 
@@ -953,6 +953,7 @@ elif menu == "🔬 Example 2":
 
 elif menu == "🎛️ Interactive Exploration":
     st.subheader("Interactive Exploration of Cleaning Methods")
+    st.markdown("")
 
     if "df_consistent" in st.session_state:
         # Copy the consistent DataFrame for interactive cleaning
@@ -1118,7 +1119,7 @@ elif menu == "📄 Summary":
 
     Visual analysis showed that **outlier removal compressed the tails** 
     of many distributions, particularly for variables like `Cholesterol`, 
-    `Copper`, and `SGOT`. Interestingly, most outliers were concentrated 
+    `Copper` and `SGOT`. Interestingly, most outliers were concentrated 
     in **advanced-stage patients**, suggesting that **removing these values 
     may bias the dataset toward milder cases** and reduce clinical 
     sensitivity. This underlines the importance of aligning cleaning 
