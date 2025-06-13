@@ -1088,13 +1088,13 @@ elif menu == "📄 Summary":
     st.markdown("""
     This project aimed to perform an **exploratory data analysis (EDA)** on 
     biotechnological data, focusing on improving data quality through 
-    structured **cleaning**, **imputation**, and **outlier detection**.     
+    structured **cleaning**, **imputation** and **outlier detection**.     
 
     ### 1. Data Acquisition and Structure
 
-    A class-based interface was used to download, read, and structure the 
+    A class-based interface was used to download, read and structure the 
     raw data. Early inspection revealed issues typical of biotechnological 
-    datasets: **missing values**, **extreme outliers**, and **heterogeneous
+    datasets: **missing values**, **extreme outliers** and **heterogeneous
     subgroup characteristics**, especially between randomized trial 
     participants and non-treated patients.
 
