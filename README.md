@@ -45,6 +45,7 @@ Interactive EDA
 - Real-time feedback with log messages for traceability
 
 ## Getting Started
+To run the Streamlit App locally:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Zeigenratte/eda_toolkit.git
@@ -58,4 +59,5 @@ Interactive EDA
 3. **Run the Streamlit App**
    ```bash
    streamlit run app.py
-
+4. **Download the Dataset"
+   either from:
