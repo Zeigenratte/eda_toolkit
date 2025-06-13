@@ -44,5 +44,13 @@ Interactive EDA
 - Run modular analysis via Streamlit widgets
 - Combine overviews, summaries, corrections and visualizations in one interface
 - Real-time feedback with log messages for traceability
----
+
+## Getting Started
+1. Clone the Repository
+git clone https://github.com/zeigenratte/eda_toolkit.git
+cd eda_toolkit
+2. Install Requirements
+pip install -r requirements.txt
+3. Run the Streamlit App
+streamlit run app.py
 
