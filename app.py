@@ -33,16 +33,36 @@ menu = st.sidebar.selectbox(
         "📚 Literature"
     ]
 )
+import os
 
 # Load Data
 if menu == "📂 Load Data":
+    st.write("## Upload a dataset or use the sample file 'cirrhosis.csv'")
     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
+    use_sample = st.checkbox("Use included sample dataset (cirrhosis.csv)")
+
     if uploaded_file is not None:
         df_raw = pd.read_csv(uploaded_file)
         st.session_state.df_raw = df_raw
-        st.success("Data loaded successfully!")
+        st.success("Custom dataset loaded successfully!")
         st.write("Preview of Raw Data:")
         st.dataframe(df_raw.head())
+    elif use_sample:
+        try:
+            BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+            sample_path = os.path.join(BASE_DIR, "data", "cirrhosis.csv")
+
+            df_raw = pd.read_csv(sample_path)
+            st.session_state.df_raw = df_raw
+            st.success("Sample dataset 'cirrhosis.csv' loaded successfully!")
+            st.write("Preview of Raw Data:")
+            st.dataframe(df_raw.head())
+        except FileNotFoundError:
+            st.error("Sample dataset 'cirrhosis.csv' not found. Please upload your own dataset.")
+    else:
+        st.info("Please upload a CSV file or select the sample dataset checkbox to proceed.")
+
+
 
 # Dataset Description from kaggle
 elif menu == "📝 Description":
