@@ -6,6 +6,7 @@ tool designed for analysis of Cirrhosis Prediction Dataset.
 It includes classes for data cleaning, inconsistency resolution, 
 statistical summarization, handling missing values and outliers and 
 visual inspection, all accessible through an intuitive web interface.
+
 ---
 ## Features
 Data Overview and Inspection
@@ -44,4 +45,5 @@ Interactive EDA
 - Run modular analysis via Streamlit widgets
 - Combine overviews, summaries, corrections and visualizations in one interface
 - Real-time feedback with log messages for traceability
+---
 
