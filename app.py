@@ -956,7 +956,7 @@ elif menu == "🎛️ Interactive Exploration":
     st.markdown("""
     In this section, we can explore the impact of different data cleaning methods 
     through an interactive interface. Users are invited to select and configure 
-    cleaning techniques, including handling missing values and outliers—for two 
+    cleaning techniques, including handling missing values and outliers, for two 
     separate DataFrames (A and B). For each DataFrame, users can specify target 
     columns, define subgroups and fine-tune method-specific parameters using 
     sliders and input fields. Once applied, the effects of these cleaning 
