@@ -59,5 +59,3 @@ To run the Streamlit App locally:
 3. **Run the Streamlit App**
    ```bash
    streamlit run app.py
-4. **Download the Dataset"
-   either from:
