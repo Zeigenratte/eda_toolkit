@@ -47,10 +47,10 @@ Interactive EDA
 
 ## Getting Started
 1. Clone the Repository
-git clone https://github.com/zeigenratte/eda_toolkit.git
-cd eda_toolkit
+   git clone https://github.com/zeigenratte/eda_toolkit.git
+   cd eda_toolkit
 2. Install Requirements
-pip install -r requirements.txt
+   pip install -r requirements.txt
 3. Run the Streamlit App
-streamlit run app.py
+   streamlit run app.py
 
