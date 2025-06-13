@@ -45,11 +45,14 @@ Interactive EDA
 - Real-time feedback with log messages for traceability
 
 ## Getting Started
-1. Clone the Repository
-- git clone https://github.com/zeigenratte/eda_toolkit.git
-- cd eda_toolkit
-2. Install Requirements
-- pip install -r requirements.txt
-3. Run the Streamlit App
-- streamlit run app.py
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/zeigenratte/eda_toolkit.git
+   cd eda_toolkit
+2. **Install Requirements**
+   ```bash
+   pip install -r requirements.txt
+3. **Run the Streamlit App**
+   ```bash
+   streamlit run app.py
 
