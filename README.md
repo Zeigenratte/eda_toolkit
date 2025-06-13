@@ -7,7 +7,6 @@ It includes classes for data cleaning, inconsistency resolution,
 statistical summarization, handling missing values and outliers and 
 visual inspection, all accessible through an intuitive web interface.
 
----
 ## Features
 Data Overview and Inspection
 - View dataset shape and structure
