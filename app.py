@@ -953,7 +953,22 @@ elif menu == "🔬 Example 2":
 
 elif menu == "🎛️ Interactive Exploration":
     st.subheader("Interactive Exploration of Cleaning Methods")
-    st.markdown("")
+    st.markdown("""
+    In this section, we can explore the impact of different data cleaning methods 
+    through an interactive interface. Users are invited to select and configure 
+    cleaning techniques, including handling missing values and outliers—for two 
+    separate DataFrames (A and B). For each DataFrame, users can specify target 
+    columns, define subgroups and fine-tune method-specific parameters using 
+    sliders and input fields. Once applied, the effects of these cleaning 
+    strategies can be assessed and compared through the following.
+
+    - Basic Descriptive Statistics, offering a summary of key metrics 
+      post-cleaning.
+    - Distribution Visualizations, highlighting differences in categorical and 
+      numerical features.
+    - Correlation Heatmaps, revealing underlying relationships and potential 
+      data redundancies.
+    """)
 
     if "df_consistent" in st.session_state:
         # Copy the consistent DataFrame for interactive cleaning
