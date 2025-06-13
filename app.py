@@ -490,7 +490,6 @@ elif menu == "👥 Outliers Exploration":
 
     if "df_consistent" in st.session_state:
         df_consistent = st.session_state.df_consistent
-        st.subheader("Numeric Variables")
 
         # Create a dictionary with the cleaned dataset for comparison
         dict_clean = {
