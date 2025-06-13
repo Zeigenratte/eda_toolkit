@@ -48,8 +48,10 @@ Interactive EDA
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Zeigenratte/eda_toolkit.git
-   
+   ```
+   ```bash
    cd eda_toolkit
+   ```
 2. **Install Requirements**
    ```bash
    pip install -r requirements.txt
